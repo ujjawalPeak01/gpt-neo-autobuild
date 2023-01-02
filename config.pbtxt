@@ -1,4 +1,4 @@
-# Copyright (c) 2022, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# Copyright (c) 2020, NVIDIA CORPORATION. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
@@ -24,27 +24,36 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-name: "##pipeline##"
+name: "add_sub"
 backend: "python"
-max_batch_size: 8
 
 input [
   {
-    name: "prompt"
-    data_type: TYPE_STRING	
-    dims: [1]
+    name: "INPUT0"
+    data_type: TYPE_FP32
+    dims: [ 4 ]
+  }
+]
+input [
+  {
+    name: "INPUT1"
+    data_type: TYPE_FP32
+    dims: [ 4 ]
   }
 ]
 output [
   {
-    name: "generated_image"
-    data_type: TYPE_FP32	
-    dims: [ -1, -1, -1]
+    name: "OUTPUT0"
+    data_type: TYPE_FP32
+    dims: [ 4 ]
+  }
+]
+output [
+  {
+    name: "OUTPUT1"
+    data_type: TYPE_FP32
+    dims: [ 4 ]
   }
 ]
 
-instance_group [
-  {
-    kind: KIND_GPU
-  }
-]
+instance_group [{ kind: KIND_CPU }]
