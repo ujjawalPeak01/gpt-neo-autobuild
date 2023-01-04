@@ -1,16 +1,9 @@
 import json
 import torch
-from transformers import AutoModelForQuestionAnswering, AutoTokenizer, pipeline
 
 
 def init(self, args):
-    model_name = "deepset/tinyroberta-squad2"
-
-    # a) Get predictions
-    device = 0 if torch.cuda.is_available() else -1
-    self.model = pipeline(
-        "question-answering", model=model_name, tokenizer=model_name, device=device
-    )
+    pass
 
 
 def infer(self, inputs, outputs):
