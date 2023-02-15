@@ -1,26 +1,21 @@
 {
   "input": [
       {
-        "name": "INPUT0",
-        "data_type": "TYPE_FP32",
-        "dims": [4]
+        "name": "prompt",
+        "data_type": "TYPE_STRING",
+        "dims": [-1]
       },
       {
-        "name": "INPUT1",
-        "data_type": "TYPE_FP32",
-        "dims": [4]
+        "name": "image_url",
+        "data_type": "TYPE_STRING",
+        "dims": [-1]
       }
     ],
     "output": [
       {
-        "name": "OUTPUT0",
-        "data_type": "TYPE_FP32",	
-        "dims": [4]
-      },
-      {
-        "name": "OUTPUT1",
-        "data_type": "TYPE_FP32",	
-        "dims": [4]
+        "name": "generated_image_base64",
+        "data_type": "TYPE_STRING",	
+        "dims": [-1]
       }
     ]
 }
