@@ -17,6 +17,7 @@ class InferlessPythonModel:
         # inputs is a dictonary where the keys are input names and values are actual input data
         # e.g. in the below code the input name is "prompt"
         prompt = inputs["prompt"]
+        pint("Cuda")
         pipeline_output = self.generator(prompt, do_sample=True, min_length=20)
         generated_txt = pipeline_output[0]["generated_text"]
         print("This is inside inference function - gpt neo", flush=True)
