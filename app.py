@@ -6,7 +6,7 @@ class InferlessPythonModel:
 
     def initialize(self):
         self.generator = pipeline("text-generation", model="EleutherAI/gpt-neo-125M",device=0)
-        print("This is Initialize Function", flush=True)
+        print("This is Initialize Code", flush=True)
 
     
     def infer(self, inputs):
