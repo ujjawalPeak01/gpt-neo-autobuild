@@ -6,7 +6,7 @@ class InferlessPythonModel:
 
     def initialize(self):
         self.generator = pipeline("text-generation", model="EleutherAI/gpt-neo-125M",device=0)
-        file_path = "/var/nfs-mount/aws-volume-test/abc.txt"
+        file_path = "/var/nfs-mount/testvol/abc.txt"
         with open(file_path, "w") as file:
             file.write("This is a test file.")
         
