@@ -17,6 +17,7 @@ class InferlessPythonModel:
         prompt = inputs["prompt"]
         pipeline_output = self.generator(prompt, do_sample=True, min_length=20, max_length=300)
         generated_txt = pipeline_output[0]["generated_text"]
+        pint("ABCD")
         return {"generated_text": generated_txt}
 
     def finalize(self,args):
